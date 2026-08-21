@@ -7,23 +7,32 @@
    OBTENER ELEMENTOS
 ========================================================= */
 
-const formulario = document.getElementById("registroForm");
+const formulario =
+    document.getElementById("registroForm");
 
-const nombre = document.getElementById("nombre");
+const nombre =
+    document.getElementById("nombre");
 
-const correo = document.getElementById("correo");
+const correo =
+    document.getElementById("correo");
 
-const carnet = document.getElementById("carnet");
+const carnet =
+    document.getElementById("carnet");
 
-const password = document.getElementById("password");
+const password =
+    document.getElementById("password");
 
-const confirmar = document.getElementById("confirmar");
+const confirmar =
+    document.getElementById("confirmar");
 
-const terminos = document.getElementById("terminos");
+const terminos =
+    document.getElementById("terminos");
 
-const boton = document.getElementById("btnRegistro");
+const boton =
+    document.getElementById("btnRegistro");
 
-const mensaje = document.getElementById("mensaje");
+const mensaje =
+    document.getElementById("mensaje");
 
 
 /* =========================================================
@@ -34,7 +43,8 @@ function mostrarMensaje(texto, tipo) {
 
     mensaje.textContent = texto;
 
-    mensaje.className = "mensaje " + tipo;
+    mensaje.className =
+        "mensaje " + tipo;
 
 }
 
@@ -43,153 +53,200 @@ function mostrarMensaje(texto, tipo) {
    REGISTRO
 ========================================================= */
 
-formulario.addEventListener("submit", function(event) {
+formulario.addEventListener(
+    "submit",
+    function(event) {
 
-    /*
-        Evita que el formulario recargue
-        la página.
-    */
-
-    event.preventDefault();
+        event.preventDefault();
 
 
-    /* Limpiar mensaje */
+        /* Limpiar mensaje */
 
-    mensaje.textContent = "";
+        mensaje.textContent = "";
 
-    mensaje.className = "mensaje";
+        mensaje.className =
+            "mensaje";
 
 
-    /* =====================================================
-       VALIDAR NOMBRE
-    ===================================================== */
+        /* =================================================
+           VALIDAR NOMBRE
+        ================================================= */
 
-    if (nombre.value.trim() === "") {
+        if (nombre.value.trim() === "") {
 
-        mostrarMensaje(
-            "Por favor, ingresa tu nombre completo.",
-            "error"
-        );
+            mostrarMensaje(
+                "Por favor, ingresa tu nombre completo.",
+                "error"
+            );
 
-        nombre.focus();
+            nombre.focus();
 
-        return;
+            return;
+        }
+
+
+        /* =================================================
+           VALIDAR CORREO
+        ================================================= */
+
+        if (correo.value.trim() === "") {
+
+            mostrarMensaje(
+                "Por favor, ingresa tu correo electrónico.",
+                "error"
+            );
+
+            correo.focus();
+
+            return;
+        }
+
+
+        /* =================================================
+           VALIDAR CARNÉ
+        ================================================= */
+
+        if (carnet.value.trim() === "") {
+
+            mostrarMensaje(
+                "Por favor, ingresa tu carné universitario.",
+                "error"
+            );
+
+            carnet.focus();
+
+            return;
+        }
+
+
+        /* =================================================
+           VALIDAR CONTRASEÑA
+        ================================================= */
+
+        if (password.value.length < 8) {
+
+            mostrarMensaje(
+                "La contraseña debe tener al menos 8 caracteres.",
+                "error"
+            );
+
+            password.focus();
+
+            return;
+        }
+
+
+        /* =================================================
+           COMPROBAR CONTRASEÑAS
+        ================================================= */
+
+        if (password.value !== confirmar.value) {
+
+            mostrarMensaje(
+                "Las contraseñas no coinciden.",
+                "error"
+            );
+
+            confirmar.focus();
+
+            return;
+        }
+
+
+        /* =================================================
+           TÉRMINOS
+        ================================================= */
+
+        if (!terminos.checked) {
+
+            mostrarMensaje(
+                "Debes aceptar los términos y condiciones.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        /* =================================================
+           ENVIAR CORREO
+        ================================================= */
+
+        boton.disabled = true;
+
+        boton.textContent =
+            "Enviando correo...";
+
+
+        enviarCorreo(
+            nombre.value,
+            correo.value,
+            carnet.value
+        )
+
+
+        .then(function() {
+
+
+            /* =============================================
+               CORREO ENVIADO
+            ============================================= */
+
+            mostrarMensaje(
+                "¡Registro realizado correctamente! Revisa tu correo electrónico para confirmar tu cuenta.",
+                "exito"
+            );
+
+
+            boton.textContent =
+                "Registro completado";
+
+
+            console.log(
+                "Correo enviado correctamente."
+            );
+
+
+            console.log(
+                "Usuario:",
+                nombre.value
+            );
+
+
+            console.log(
+                "Correo:",
+                correo.value
+            );
+
+
+        })
+
+
+        .catch(function(error) {
+
+
+            /* =============================================
+               ERROR
+            ============================================= */
+
+            console.error(
+                "Error al enviar correo:",
+                error
+            );
+
+
+            mostrarMensaje(
+                "El registro fue correcto, pero no pudimos enviar el correo de confirmación.",
+                "error"
+            );
+
+
+            boton.disabled = false;
+
+            boton.textContent =
+                "Crear cuenta";
+
+        });
+
     }
-
-
-    /* =====================================================
-       VALIDAR CORREO
-    ===================================================== */
-
-    if (correo.value.trim() === "") {
-
-        mostrarMensaje(
-            "Por favor, ingresa tu correo electrónico.",
-            "error"
-        );
-
-        correo.focus();
-
-        return;
-    }
-
-
-    /* =====================================================
-       VALIDAR CARNÉ
-    ===================================================== */
-
-    if (carnet.value.trim() === "") {
-
-        mostrarMensaje(
-            "Por favor, ingresa tu carné universitario.",
-            "error"
-        );
-
-        carnet.focus();
-
-        return;
-    }
-
-
-    /* =====================================================
-       VALIDAR CONTRASEÑA
-    ===================================================== */
-
-    if (password.value.length < 8) {
-
-        mostrarMensaje(
-            "La contraseña debe tener al menos 8 caracteres.",
-            "error"
-        );
-
-        password.focus();
-
-        return;
-    }
-
-
-    /* =====================================================
-       COMPROBAR CONTRASEÑAS
-    ===================================================== */
-
-    if (password.value !== confirmar.value) {
-
-        mostrarMensaje(
-            "Las contraseñas no coinciden.",
-            "error"
-        );
-
-        confirmar.focus();
-
-        return;
-    }
-
-
-    /* =====================================================
-       TÉRMINOS
-    ===================================================== */
-
-    if (!terminos.checked) {
-
-        mostrarMensaje(
-            "Debes aceptar los términos y condiciones.",
-            "error"
-        );
-
-        return;
-    }
-
-
-    /* =====================================================
-       REGISTRO CORRECTO
-    ===================================================== */
-
-    mostrarMensaje(
-        "¡Registro realizado correctamente!",
-        "exito"
-    );
-
-
-    /*
-        Desactivar botón temporalmente.
-    */
-
-    boton.disabled = true;
-
-    boton.textContent = "Registrado";
-
-
-    /* =====================================================
-       MOSTRAR INFORMACIÓN EN CONSOLA
-    ===================================================== */
-
-    console.log("Usuario registrado:");
-
-    console.log("Nombre:", nombre.value);
-
-    console.log("Correo:", correo.value);
-
-    console.log("Carné:", carnet.value);
-
-
-});
+);
