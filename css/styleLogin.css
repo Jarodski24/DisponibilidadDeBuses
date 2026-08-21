@@ -1,0 +1,511 @@
+/* =========================================================
+   BUSUCR - LOGIN
+========================================================= */
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f8fafc,
+            #dbeafe
+        );
+
+    color: #334155;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+========================================================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 430px;
+}
+
+
+/* =========================================================
+   TARJETA DE LOGIN
+========================================================= */
+
+.login-card {
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.12);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Línea superior */
+
+.login-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #3b82f6,
+            #60a5fa
+        );
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.login-logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #eff6ff;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.login-card h1 {
+
+    text-align: center;
+
+    color: #0f172a;
+
+    font-size: 30px;
+
+    margin-bottom: 6px;
+}
+
+
+.login-subtitle {
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.login-group {
+
+    margin-bottom: 20px;
+}
+
+
+.login-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.login-group input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    background-color: #f8fafc;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s,
+        box-shadow 0.25s,
+        background-color 0.25s;
+}
+
+
+.login-group input::placeholder {
+
+    color: #94a3b8;
+}
+
+
+.login-group input:focus {
+
+    background-color: white;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   OPCIONES
+========================================================= */
+
+.login-opciones {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 5px 0 22px;
+
+    font-size: 13px;
+}
+
+
+/* Recordarme */
+
+.recordarme {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #64748b;
+
+    cursor: pointer;
+}
+
+
+.recordarme input {
+
+    accent-color: #2563eb;
+
+    cursor: pointer;
+}
+
+
+/* Recuperar contraseña */
+
+.recuperar {
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+
+.recuperar:hover {
+
+    color: #1d4ed8;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   MENSAJES
+========================================================= */
+
+.mensaje {
+
+    display: none;
+
+    padding: 12px;
+
+    margin-bottom: 18px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+.mensaje.error {
+
+    display: block;
+
+    background-color: #fee2e2;
+
+    color: #991b1b;
+
+    border: 1px solid #fecaca;
+}
+
+
+.mensaje.exito {
+
+    display: block;
+
+    background-color: #dcfce7;
+
+    color: #166534;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+/* =========================================================
+   BOTÓN LOGIN
+========================================================= */
+
+.btn-login {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s,
+        opacity 0.25s;
+}
+
+
+.btn-login:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 25px rgba(37, 99, 235, 0.30);
+}
+
+
+.btn-login:active {
+
+    transform: translateY(0);
+}
+
+
+.btn-login:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   REGISTRO
+========================================================= */
+
+.login-registro {
+
+    text-align: center;
+
+    margin-top: 24px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.login-registro a {
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+
+.login-registro a:hover {
+
+    color: #1d4ed8;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   VOLVER
+========================================================= */
+
+.volver {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+
+.volver:hover {
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .login-page {
+
+        padding: 15px;
+    }
+
+
+    .login-card {
+
+        padding: 30px 22px;
+
+        border-radius: 16px;
+    }
+
+
+    .login-card h1 {
+
+        font-size: 26px;
+    }
+
+
+    .login-opciones {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+}
