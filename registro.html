@@ -12,6 +12,7 @@
 
     <title>Registro | BusUCR</title>
 
+    <!-- CSS del registro -->
     <link
         rel="stylesheet"
         href="css/styleRegistro.css"
@@ -26,9 +27,19 @@
 
         <div class="registro-card">
 
+
+            <!-- ==============================
+                 LOGO
+            =============================== -->
+
             <div class="registro-logo">
                 🚌
             </div>
+
+
+            <!-- ==============================
+                 ENCABEZADO
+            =============================== -->
 
             <h1>
                 Crear cuenta
@@ -39,8 +50,14 @@
             </p>
 
 
-            <form>
+            <!-- ==============================
+                 FORMULARIO
+            =============================== -->
 
+            <form id="registroForm">
+
+
+                <!-- NOMBRE -->
 
                 <div class="registro-group">
 
@@ -59,6 +76,8 @@
                 </div>
 
 
+                <!-- CORREO -->
+
                 <div class="registro-group">
 
                     <label for="correo">
@@ -75,6 +94,8 @@
 
                 </div>
 
+
+                <!-- CARNÉ -->
 
                 <div class="registro-group">
 
@@ -93,6 +114,8 @@
                 </div>
 
 
+                <!-- CONTRASEÑA -->
+
                 <div class="registro-group">
 
                     <label for="password">
@@ -104,11 +127,14 @@
                         id="password"
                         name="password"
                         placeholder="Ingrese una contraseña"
+                        minlength="8"
                         required
                     >
 
                 </div>
 
+
+                <!-- CONFIRMAR CONTRASEÑA -->
 
                 <div class="registro-group">
 
@@ -121,17 +147,21 @@
                         id="confirmar"
                         name="confirmar"
                         placeholder="Repita su contraseña"
+                        minlength="8"
                         required
                     >
 
                 </div>
 
 
+                <!-- TÉRMINOS -->
+
                 <div class="registro-terminos">
 
                     <input
                         type="checkbox"
                         id="terminos"
+                        name="terminos"
                         required
                     >
 
@@ -142,15 +172,31 @@
                 </div>
 
 
+                <!-- MENSAJE DE ERROR / ÉXITO -->
+
+                <div
+                    id="mensaje"
+                    class="mensaje"
+                ></div>
+
+
+                <!-- BOTÓN -->
+
                 <button
                     type="submit"
+                    id="btnRegistro"
                     class="btn-registro"
                 >
                     Crear cuenta
                 </button>
 
+
             </form>
 
+
+            <!-- ==============================
+                 LOGIN
+            =============================== -->
 
             <p class="registro-login">
 
@@ -163,6 +209,10 @@
             </p>
 
 
+            <!-- ==============================
+                 VOLVER
+            =============================== -->
+
             <a
                 href="index.html"
                 class="volver"
@@ -170,9 +220,15 @@
                 ← Volver al inicio
             </a>
 
+
         </div>
 
     </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="js/registro.js"></script>
 
 </body>
 
