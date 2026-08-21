@@ -5,6 +5,10 @@
 /* =========================================================
    CONFIGURACIÓN
 ========================================================= */
+console.log("================================");
+console.log("EMAIL.JS SE ESTA EJECUTANDO");
+console.log("================================");
+
 
 const EMAILJS_PUBLIC_KEY = "QJPaB6kqAIjI0ESpT";
 
