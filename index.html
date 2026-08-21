@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BusUCR</title>
+
+    <!-- Importación del archivo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+  <nav class="navbar">
+
+    <div class="logo">
+        🚌 BusUCR
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#">
+                Inicio
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                Buses
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                Horarios
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                Contacto
+            </a>
+        </li>
+
+        <li>
+            <a href="registro.html" class="btn-login">
+                Iniciar sesión
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+    <!-- ==============================
+         ENCABEZADO
+    ============================== -->
+
+    <header class="header">
+
+        <h1>
+            Disponibilidad de Buses
+        </h1>
+
+        <p>
+            Consulta los buses disponibles cerca de la UCR de Guápiles
+        </p>
+
+    </header>
+
+
+    <!-- ==============================
+         CONTENIDO PRINCIPAL
+    ============================== -->
+
+    <main class="container">
+
+
+        <!-- FILTROS -->
+
+        <div class="filters">
+
+            <select>
+
+                <option>
+                    Seleccione una ruta
+                </option>
+
+                <option>
+                    Guápiles - San José
+                </option>
+
+                <option>
+                    Guápiles - Limón
+                </option>
+
+            </select>
+
+
+            <input type="time">
+
+
+            <button class="btn-search">
+                Buscar
+            </button>
+
+        </div>
+
+
+        <!-- ==============================
+             BUSES
+        ============================== -->
+
+        <div class="bus-container">
+
+
+            <!-- BUS 1 -->
+
+            <div class="bus-card">
+
+                <h2>
+                    Bus Guápiles
+                </h2>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Destino:
+                    </strong>
+
+                    San José
+
+                </p>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Salida:
+                    </strong>
+
+                    7:30 AM
+
+                </p>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Distancia:
+                    </strong>
+
+                    500 m
+
+                </p>
+
+
+                <span class="status available">
+
+                    Disponible
+
+                </span>
+
+
+                <button class="btn-schedule">
+
+                    Ver horario
+
+                </button>
+
+            </div>
+
+
+            <!-- BUS 2 -->
+
+            <div class="bus-card">
+
+                <h2>
+                    Bus Caribeños
+                </h2>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Destino:
+                    </strong>
+
+                    San José
+
+                </p>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Salida:
+                    </strong>
+
+                    8:00 AM
+
+                </p>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Distancia:
+                    </strong>
+
+                    800 m
+
+                </p>
+
+
+                <span class="status limited">
+
+                    Pocos espacios
+
+                </span>
+
+
+                <button class="btn-schedule">
+
+                    Ver horario
+
+                </button>
+
+            </div>
+
+
+            <!-- BUS 3 -->
+
+            <div class="bus-card">
+
+                <h2>
+                    Bus Regional
+                </h2>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Destino:
+                    </strong>
+
+                    Limón
+
+                </p>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Salida:
+                    </strong>
+
+                    9:15 AM
+
+                </p>
+
+
+                <p class="bus-info">
+
+                    <strong>
+                        Distancia:
+                    </strong>
+
+                    1.2 km
+
+                </p>
+
+
+                <span class="status unavailable">
+
+                    No disponible
+
+                </span>
+
+
+                <button class="btn-schedule">
+
+                    Ver horario
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <p>
+            BusUCR © 2026 -
+            Disponibilidad de transporte cerca de la UCR de Guápiles
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
