@@ -1,0 +1,384 @@
+/* =========================================================
+   REGISTRO - BUSUCR
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f8fafc,
+            #dbeafe
+        );
+
+    color: #334155;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.registro-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+}
+
+
+.registro-container {
+
+    width: 100%;
+
+    max-width: 470px;
+}
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
+.registro-card {
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.12);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.registro-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #3b82f6,
+            #60a5fa
+        );
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.registro-logo {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eff6ff;
+
+    font-size: 30px;
+}
+
+
+.registro-card h1 {
+
+    text-align: center;
+
+    color: #0f172a;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+
+.registro-subtitle {
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.registro-group {
+
+    margin-bottom: 18px;
+}
+
+
+.registro-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.registro-group input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s,
+        box-shadow 0.25s,
+        background-color 0.25s;
+}
+
+
+.registro-group input:focus {
+
+    background: white;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   TÉRMINOS
+========================================================= */
+
+.registro-terminos {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin: 8px 0 22px;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+.registro-terminos input {
+
+    margin-top: 3px;
+
+    accent-color: #2563eb;
+
+    cursor: pointer;
+}
+
+
+.registro-terminos label {
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BOTÓN
+========================================================= */
+
+.btn-registro {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+
+.btn-registro:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 11px 25px rgba(37, 99, 235, 0.30);
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.registro-login {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+.registro-login a {
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+.registro-login a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   VOLVER
+========================================================= */
+
+.volver {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    text-decoration: none;
+}
+
+
+.volver:hover {
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .registro-page {
+
+        padding: 15px;
+    }
+
+
+    .registro-card {
+
+        padding: 30px 22px;
+
+        border-radius: 16px;
+    }
+
+
+    .registro-card h1 {
+
+        font-size: 26px;
+    }
+
+}
