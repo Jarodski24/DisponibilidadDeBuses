@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Iniciar sesión | BusUCR</title>
+
+    <!-- CSS del Login -->
+    <link
+        rel="stylesheet"
+        href="css/styleLogin.css"
+    >
+
+</head>
+
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+
+            <!-- ==============================
+                 LOGO
+            =============================== -->
+
+            <div class="login-logo">
+                🚌
+            </div>
+
+
+            <!-- ==============================
+                 ENCABEZADO
+            =============================== -->
+
+            <h1>
+                Bienvenido a BusUCR
+            </h1>
+
+            <p class="login-subtitle">
+                Inicia sesión para consultar tus rutas y horarios
+            </p>
+
+
+            <!-- ==============================
+                 FORMULARIO
+            =============================== -->
+
+            <form id="loginForm">
+
+
+                <!-- CORREO -->
+
+                <div class="login-group">
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONTRASEÑA -->
+
+                <div class="login-group">
+
+                    <label for="password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Ingrese su contraseña"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- RECORDAR -->
+
+                <div class="login-options">
+
+                    <label class="recordar">
+
+                        <input
+                            type="checkbox"
+                            id="recordar"
+                        >
+
+                        <span>
+                            Recordarme
+                        </span>
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="recuperar"
+                    >
+                        ¿Olvidaste tu contraseña?
+                    </a>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <div
+                    id="mensaje"
+                    class="mensaje"
+                ></div>
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    type="submit"
+                    id="btnLogin"
+                    class="btn-login"
+                >
+                    Iniciar sesión
+                </button>
+
+
+            </form>
+
+
+            <!-- ==============================
+                 REGISTRO
+            =============================== -->
+
+            <p class="login-registro">
+
+                ¿No tienes una cuenta?
+
+                <a href="registro.html">
+                    Crear cuenta
+                </a>
+
+            </p>
+
+
+            <!-- ==============================
+                 VOLVER
+            =============================== -->
+
+            <a
+                href="index.html"
+                class="volver"
+            >
+                ← Volver al inicio
+            </a>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- JavaScript del Login -->
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
