@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contáctenos | BusUCR</title>
+
+    <!-- CSS de Contacto -->
+    <link
+        rel="stylesheet"
+        href="css/styleContactenos.css"
+    >
+
+</head>
+
+
+<body class="contacto-page">
+
+
+    <!-- ==============================
+         NAVEGACIÓN
+    =============================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            BusUCR
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Inicio
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#buses">
+                    Buses
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Horarios
+                </a>
+            </li>
+
+            <li>
+                <a href="contacto.html">
+                    Contáctenos
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ==============================
+         CONTENIDO PRINCIPAL
+    =============================== -->
+
+    <main class="contacto-container">
+
+
+        <!-- ==============================
+             ENCABEZADO
+        =============================== -->
+
+        <section class="contacto-header">
+
+            <div class="contacto-icon">
+                📩
+            </div>
+
+            <h1>
+                Contáctenos
+            </h1>
+
+            <p>
+                ¿Tienes alguna pregunta, sugerencia o problema?
+                Escríbenos y estaremos encantados de ayudarte.
+            </p>
+
+        </section>
+
+
+        <!-- ==============================
+             FORMULARIO
+        =============================== -->
+
+        <section class="contacto-card">
+
+            <form id="contactoForm">
+
+
+                <!-- NOMBRE -->
+
+                <div class="contacto-group">
+
+                    <label for="nombre">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ej. Jarod Delgado"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CORREO -->
+
+                <div class="contacto-group">
+
+                    <label for="correo">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MOTIVO -->
+
+                <div class="contacto-group">
+
+                    <label for="motivo">
+                        Motivo de contacto
+                    </label>
+
+                    <select
+                        id="motivo"
+                        name="motivo"
+                        required
+                    >
+
+                        <option value="">
+                            Seleccione una opción
+                        </option>
+
+                        <option value="consulta">
+                            Consulta general
+                        </option>
+
+                        <option value="horarios">
+                            Problema con horarios
+                        </option>
+
+                        <option value="buses">
+                            Información sobre buses
+                        </option>
+
+                        <option value="sugerencia">
+                            Sugerencia
+                        </option>
+
+                        <option value="problema">
+                            Reportar un problema
+                        </option>
+
+                        <option value="otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MENSAJE -->
+
+                <div class="contacto-group">
+
+                    <label for="mensaje">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="6"
+                        placeholder="Escriba aquí su mensaje..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- MENSAJE DEL SISTEMA -->
+
+                <div
+                    id="mensajeEstado"
+                    class="mensaje-estado"
+                ></div>
+
+
+                <!-- BOTÓN -->
+
+                <button
+                    type="submit"
+                    class="btn-contacto"
+                    id="btnContacto"
+                >
+                    Enviar mensaje
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- ==============================
+             INFORMACIÓN DE CONTACTO
+        =============================== -->
+
+        <section class="contacto-info">
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    📧
+                </div>
+
+                <h2>
+                    Correo
+                </h2>
+
+                <p>
+                    busucr2026@gmail.com
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    📍
+                </div>
+
+                <h2>
+                    Ubicación
+                </h2>
+
+                <p>
+                    UCR - Guápiles
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🚌
+                </div>
+
+                <h2>
+                    BusUCR
+                </h2>
+
+                <p>
+                    Información de transporte universitario
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ==============================
+             VOLVER
+        =============================== -->
+
+        <a
+            href="index.html"
+            class="volver"
+        >
+            ← Volver al inicio
+        </a>
+
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+
+        <p>
+            BusUCR © 2026 -
+            Disponibilidad de transporte cerca de la UCR de Guápiles
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/contacto.js"></script>
+
+</body>
+
+</html>
