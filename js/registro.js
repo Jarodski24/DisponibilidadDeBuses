@@ -19,12 +19,6 @@ const correo =
 const carnet =
     document.getElementById("carnet");
 
-const password =
-    document.getElementById("password");
-
-const confirmar =
-    document.getElementById("confirmar");
-
 const terminos =
     document.getElementById("terminos");
 
@@ -114,40 +108,6 @@ formulario.addEventListener(
             );
 
             carnet.focus();
-
-            return;
-        }
-
-
-        /* =================================================
-           VALIDAR CONTRASEÑA
-        ================================================= */
-
-        if (password.value.length < 8) {
-
-            mostrarMensaje(
-                "La contraseña debe tener al menos 8 caracteres.",
-                "error"
-            );
-
-            password.focus();
-
-            return;
-        }
-
-
-        /* =================================================
-           COMPROBAR CONTRASEÑAS
-        ================================================= */
-
-        if (password.value !== confirmar.value) {
-
-            mostrarMensaje(
-                "Las contraseñas no coinciden.",
-                "error"
-            );
-
-            confirmar.focus();
 
             return;
         }

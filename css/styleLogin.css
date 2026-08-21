@@ -1,8 +1,6 @@
 /* =========================================================
    BUSUCR - LOGIN
 ========================================================= */
-/* =========================================================
-   CONFIGURACIÓN GENERAL
 
 /* =========================================================
    CONFIGURACIÓN GENERAL
@@ -23,12 +21,10 @@ body {
         sans-serif;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #eff6ff,
             #f8fafc,
-            #dbeafe
-        );
+            #dbeafe);
 
     color: #334155;
 
@@ -102,12 +98,10 @@ body {
     height: 5px;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #2563eb,
             #3b82f6,
-            #60a5fa
-        );
+            #60a5fa);
 }
 
 
@@ -254,52 +248,6 @@ body {
 }
 
 
-/* Recordarme */
-
-.recordarme {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    color: #64748b;
-
-    cursor: pointer;
-}
-
-
-.recordarme input {
-
-    accent-color: #2563eb;
-
-    cursor: pointer;
-}
-
-
-/* Recuperar contraseña */
-
-.recuperar {
-
-    color: #2563eb;
-
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition: color 0.2s;
-}
-
-
-.recuperar:hover {
-
-    color: #1d4ed8;
-
-    text-decoration: underline;
-}
-
-
 /* =========================================================
    MENSAJES
 ========================================================= */
@@ -354,16 +302,16 @@ body {
 
     height: 48px;
 
+    margin-top: 10px;
+
     border: none;
 
     border-radius: 10px;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #2563eb,
-            #1d4ed8
-        );
+            #1d4ed8);
 
     color: white;
 
