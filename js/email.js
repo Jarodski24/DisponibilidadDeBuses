@@ -19,7 +19,7 @@ const EMAILJS_SERVICE_ID =
     "serviceBusUCR";
 
 const EMAILJS_TEMPLATE_ID =
-    "template_k4acgtc";
+    "template_qjn4mzs";
 
 
 /* =========================================================
