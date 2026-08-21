@@ -21,52 +21,6 @@ const EMAILJS_SERVICE_ID =
 const EMAILJS_TEMPLATE_ID =
     "template_qjn4mzs";
 
-
-/* =========================================================
-   MOSTRAR CONFIGURACIÓN
-========================================================= */
-
-console.log(
-    "Public Key:",
-    EMAILJS_PUBLIC_KEY
-);
-
-console.log(
-    "Service ID:",
-    EMAILJS_SERVICE_ID
-);
-
-console.log(
-    "Template ID:",
-    EMAILJS_TEMPLATE_ID
-);
-
-
-/* =========================================================
-   VERIFICAR EMAILJS
-========================================================= */
-
-console.log(
-    "EmailJS disponible:",
-    typeof emailjs
-);
-
-
-if (typeof emailjs === "undefined") {
-
-    console.error(
-        "ERROR: EmailJS no está cargado."
-    );
-
-} else {
-
-    console.log(
-        "EmailJS fue cargado correctamente."
-    );
-
-}
-
-
 /* =========================================================
    INICIALIZAR EMAILJS
 ========================================================= */
