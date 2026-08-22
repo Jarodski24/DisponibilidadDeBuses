@@ -93,27 +93,31 @@
 
         <div class="filters">
 
-            <select>
+            <select id="select-ruta">
 
-                <option>
+                <option value="">
                     Seleccione una ruta
                 </option>
 
-                <option>
-                    Guápiles - San José
+               <option value="guapiles">
+                    Guápiles - UCR
                 </option>
 
-                <option>
-                    Guápiles - Limón
+                <option value="jimenez">
+                    Jiménez - UCR
+                </option>
+
+                <option value="siquirres">
+                    Siquirres - UCR
                 </option>
 
             </select>
 
 
-            <input type="time">
+            <input type="time" id="input-hora-index">
 
 
-            <button class="btn-search">
+            <button class="btn-search" onclick="buscarHorarioEspecifico()">
                 Buscar
             </button>
 
@@ -127,7 +131,7 @@
         <div class="bus-container">
 
 
-            <!-- BUS 1 -->
+            <!-- BUS 1 : Guápiles-->
 
             <div class="bus-card">
 
@@ -142,7 +146,7 @@
                         Destino:
                     </strong>
 
-                    San José
+                   Guápiles
 
                 </p>
 
@@ -153,7 +157,7 @@
                         Salida:
                     </strong>
 
-                    7:30 AM
+                    6:00 AM
 
                 </p>
 
@@ -176,7 +180,7 @@
                 </span>
 
 
-                <button class="btn-schedule">
+                <button class="btn-schedule" onclick="seleccionarRuta('guapiles')">
 
                     Ver horario
 
@@ -190,7 +194,7 @@
             <div class="bus-card">
 
                 <h2>
-                    Bus Caribeños
+                    Bus Jiménez
                 </h2>
 
 
@@ -200,7 +204,7 @@
                         Destino:
                     </strong>
 
-                    San José
+                    Jiménez
 
                 </p>
 
@@ -234,7 +238,7 @@
                 </span>
 
 
-                <button class="btn-schedule">
+                <button class="btn-schedule" onclick="seleccionarRuta('jimenez')">
 
                     Ver horario
 
@@ -248,7 +252,7 @@
             <div class="bus-card">
 
                 <h2>
-                    Bus Regional
+                    Bus Siquirres
                 </h2>
 
 
@@ -258,7 +262,7 @@
                         Destino:
                     </strong>
 
-                    Limón
+                    Siquirres
 
                 </p>
 
@@ -292,7 +296,7 @@
                 </span>
 
 
-                <button class="btn-schedule">
+                <button class="btn-schedule" onclick="seleccionarRuta('siquirres')">
 
                     Ver horario
 
@@ -318,7 +322,39 @@
         </p>
 
     </footer>
+<script>
+    // Función para los botones "Ver horario" de las tarjetas
+    function seleccionarRuta(ruta) {
+        localStorage.setItem('rutaSeleccionada', ruta);
+        localStorage.removeItem('horaBuscada'); // Limpiamos hora por si acaso
+        window.location.href = 'horarios.html';
+    }
 
+    // NUEVA: Función para el buscador principal de la parte de arriba
+    function buscarHorarioEspecifico() {
+        const rutaSeleccionada = document.getElementById('select-ruta').value;
+        const horaIngresada = document.getElementById('input-hora-index').value;
+
+        // Validación de que seleccione una ruta obligatoriamente
+        if (!rutaSeleccionada) {
+            alert('Por favor, selecciona una ruta válida.');
+            return;
+        }
+
+        // Guardamos la ruta en la memoria
+        localStorage.setItem('rutaSeleccionada', rutaSeleccionada);
+
+        // Si el usuario digitó una hora, la guardamos también; si la dejó vacía, la borramos
+        if (horaIngresada) {
+            localStorage.setItem('horaBuscada', horaIngresada);
+        } else {
+            localStorage.removeItem('horaBuscada');
+        }
+
+        // Redirigimos a la página de horarios
+        window.location.href = 'horarios.html';
+    }
+</script>
 
 </body>
 

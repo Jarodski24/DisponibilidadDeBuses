@@ -1,0 +1,50 @@
+/* ==========================================
+   CONTENEDOR DE LA TABLA
+========================================== */
+.tabla-container {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px; /* Bordes un poco más redondeados */
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra más pronunciada para que resalte */
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   DISEÑO DE LA TABLA
+========================================== */
+.horarios-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.horarios-table th, 
+.horarios-table td {
+    padding: 16px; /* Un poco más de espacio interior para respirar */
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Encabezado de la tabla (Color principal) */
+.horarios-table th {
+    background-color: #1e3a8a; /* Azul oscuro elegante */
+    color: #ffffff; /* Letra blanca para contrastar */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+}
+
+/* Efecto Cebra: Filas pares con un gris ultra claro */
+.horarios-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Efecto Hover: Cuando pasas el mouse por encima */
+.horarios-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.horarios-table tbody tr:hover {
+    background-color: #dbeafe; /* Un azul muy clarito al pasar el mouse */
+}

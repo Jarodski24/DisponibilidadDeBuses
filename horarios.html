@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios de Ruta - BusUCR</title>
+    
+    <!-- Importamos el CSS general para mantener el diseño de la barra de navegación -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Importamos el CSS específico para que la tabla se vea bien -->
+    <link rel="stylesheet" href="css/StyleHorarios.css">
+</head>
+<body>
+
+    <!-- Mantenemos el mismo Navbar para que el usuario no sienta que salió de la página -->
+    <nav class="navbar">
+        <div class="logo">
+            BusUCR
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Buses</a></li>
+            <li><a href="#">Horarios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="login.html" class="btn-login">Iniciar sesión</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <main class="container">
+        
+        <!-- ==========================================
+             AQUÍ ES DONDE JS VA A INYECTAR LA TABLA
+             Y EL BOTÓN DE VOLVER AL INICIO
+        =========================================== -->
+        <div id="contenedor-tabla">
+            <!-- Esto arranca vacío, el JS lo llena -->
+        </div>
+
+    </main>
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+    <footer>
+        <p>BusUCR © 2026 - Disponibilidad de transporte cerca de la UCR de Guápiles</p>
+    </footer>
+
+    <!-- Importamos el JavaScript al final para que cargue después de que el HTML ya exista -->
+    <script src="js/horarios.js"></script>
+</body>
+</html>
