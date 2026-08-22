@@ -1,0 +1,1199 @@
+/* =========================================================
+   BUSUCR - INFO / DESARROLLADORES
+   Diseño limpio, moderno y consistente con BUSUCR
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --verde: #2e7d32;
+    --verde-oscuro: #1b5e20;
+    --verde-claro: #66bb6a;
+    --verde-suave: #e8f5e9;
+
+    --fondo: #f7f9f8;
+    --fondo-blanco: #ffffff;
+    --fondo-suave: #eef5ef;
+
+    --texto: #17211b;
+    --texto-secundario: #5f6f64;
+    --texto-claro: #ffffff;
+
+    --borde: #dfe8e1;
+
+    --sombra: 0 10px 30px rgba(20, 50, 30, 0.08);
+    --sombra-hover: 0 18px 40px rgba(20, 50, 30, 0.14);
+
+    --radio: 18px;
+}
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-info {
+    min-height: 430px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 25px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(16, 65, 31, 0.96),
+            rgba(46, 125, 50, 0.88)
+        ),
+        
+}
+
+
+/* Decoración sutil */
+
+.hero-info::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    right: -160px;
+    top: -170px;
+}
+
+.hero-info::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    left: -120px;
+    bottom: -140px;
+}
+
+
+/* =========================================================
+   CONTENIDO HERO
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    text-align: center;
+
+    color: white;
+
+    animation: aparecer 0.8s ease;
+}
+
+
+/* =========================================================
+   ETIQUETA HERO
+========================================================= */
+
+.hero-tag {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #c8e6c9;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO HERO
+========================================================= */
+
+.hero-content h2 {
+    margin: 0 auto 20px;
+
+    max-width: 800px;
+
+    font-size: clamp(38px, 6vw, 58px);
+
+    line-height: 1.1;
+
+    font-weight: 750;
+
+    letter-spacing: -1.5px;
+}
+
+.hero-content h2 span {
+    color: #a5d6a7;
+}
+
+
+/* =========================================================
+   TEXTO HERO
+========================================================= */
+
+.hero-content p {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #e8f5e9;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+========================================================= */
+
+.about-project {
+    padding: 80px 25px 55px;
+
+    background: var(--fondo);
+}
+
+.section-title {
+    max-width: 780px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.section-title > span,
+.section-heading > span {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--verde);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+.section-title h2,
+.section-heading h2 {
+    margin: 0 0 18px;
+
+    color: var(--texto);
+
+    font-size: clamp(30px, 4vw, 40px);
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+}
+
+.section-title p {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: var(--texto-secundario);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DESARROLLADORES
+========================================================= */
+
+.developers {
+    padding: 45px 25px 90px;
+
+    background: var(--fondo);
+}
+
+.section-heading {
+    margin-bottom: 42px;
+
+    text-align: center;
+}
+
+.section-heading::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin: 18px auto 0;
+
+    border-radius: 10px;
+
+    background: var(--verde);
+}
+
+
+/* =========================================================
+   GRID DE DESARROLLADORES
+========================================================= */
+
+.developers-grid {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
+.developer-card {
+    overflow: hidden;
+
+    background: var(--fondo-blanco);
+
+    border: 1px solid var(--borde);
+
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.developer-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #c5d9c8;
+
+    box-shadow: var(--sombra-hover);
+}
+
+
+/* =========================================================
+   ÁREA DE FOTO
+========================================================= */
+
+.developer-image {
+    height: 275px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7ee,
+            #dcefe0
+        );
+}
+
+
+/* Decoración */
+
+.developer-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(46, 125, 50, 0.10);
+}
+
+.developer-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   FOTO
+========================================================= */
+
+.developer-image img {
+    position: relative;
+
+    z-index: 3;
+
+    width: 185px;
+    height: 185px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 50%;
+
+    border: 6px solid white;
+
+    box-shadow:
+        0 12px 30px rgba(15, 50, 25, 0.20);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.developer-card:hover .developer-image img {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 16px 35px rgba(46, 125, 50, 0.25);
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.profile-placeholder {
+    position: relative;
+
+    z-index: 3;
+
+    width: 185px;
+    height: 185px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 6px solid white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde-oscuro),
+            var(--verde)
+        );
+
+    color: white;
+
+    font-size: 48px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 12px 30px rgba(15, 50, 25, 0.20);
+
+    transition: transform 0.35s ease;
+}
+
+.developer-card:hover .profile-placeholder {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   CONTENIDO TARJETA
+========================================================= */
+
+.developer-content {
+    padding: 28px 30px 30px;
+}
+
+
+/* =========================================================
+   ROL
+========================================================= */
+
+.developer-role {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 12px;
+
+    margin-bottom: 12px;
+
+    border-radius: 20px;
+
+    background: var(--verde-suave);
+
+    color: var(--verde);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   NOMBRE
+========================================================= */
+
+.developer-content h3 {
+    margin: 0 0 14px;
+
+    color: var(--texto);
+
+    font-size: 23px;
+
+    line-height: 1.3;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.developer-description {
+    margin: 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 14.5px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   HABILIDADES
+========================================================= */
+
+.skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 22px 0 24px;
+}
+
+.skills span {
+    padding: 7px 11px;
+
+    border: 1px solid var(--borde);
+
+    border-radius: 7px;
+
+    background: #f8faf8;
+
+    color: #536258;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.skills span:hover {
+    transform: translateY(-2px);
+
+    border-color: #b9d5bd;
+
+    background: var(--verde-suave);
+
+    color: var(--verde);
+}
+
+
+/* =========================================================
+   BOTÓN PORTAFOLIO
+========================================================= */
+
+.portfolio-button {
+    width: auto;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    background: var(--verde);
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.portfolio-button:hover {
+    transform: translateY(-2px);
+
+    background: var(--verde-oscuro);
+
+    box-shadow:
+        0 7px 18px rgba(46, 125, 50, 0.22);
+}
+
+.portfolio-button span {
+    font-size: 15px;
+
+    transition: transform 0.25s ease;
+}
+
+.portfolio-button:hover span {
+    transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   BOTÓN DESACTIVADO
+========================================================= */
+
+.portfolio-button.disabled {
+    background: #d6dcda;
+
+    color: #758078;
+
+    cursor: not-allowed;
+}
+
+.portfolio-button.disabled:hover {
+    transform: none;
+
+    background: #d6dcda;
+
+    box-shadow: none;
+}
+
+.portfolio-button.disabled span {
+    transform: none;
+}
+
+
+/* =========================================================
+   VALORES DEL PROYECTO
+========================================================= */
+
+.project-values {
+    padding: 80px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b25,
+            #1b5e20
+        );
+}
+
+.values-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.value {
+    padding: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.value:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.11);
+}
+
+
+/* =========================================================
+   NÚMERO
+========================================================= */
+
+.value-number {
+    margin-bottom: 15px;
+
+    color: #a5d6a7;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TÍTULO VALOR
+========================================================= */
+
+.value h3 {
+    margin: 0 0 10px;
+
+    color: white;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   TEXTO VALOR
+========================================================= */
+
+.value p {
+    margin: 0;
+
+    color: #d5e5d8;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.developer-cta {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 75px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* =========================================================
+   CTA TEXTO
+========================================================= */
+
+.developer-cta > div:first-child {
+    max-width: 650px;
+}
+
+.developer-cta > div:first-child span {
+    color: var(--verde);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.developer-cta h2 {
+    margin: 10px 0 12px;
+
+    color: var(--texto);
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+.developer-cta p {
+    margin: 0;
+
+    color: var(--texto-secundario);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA BOTONES
+========================================================= */
+
+.cta-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Botón principal */
+
+.cta-button.primary {
+    background: var(--verde);
+
+    color: white;
+}
+
+.cta-button.primary:hover {
+    transform: translateY(-2px);
+
+    background: var(--verde-oscuro);
+
+    box-shadow:
+        0 8px 20px rgba(46, 125, 50, 0.22);
+}
+
+
+/* Botón secundario */
+
+.cta-button.secondary {
+    border: 1px solid var(--borde);
+
+    background: white;
+
+    color: var(--verde);
+}
+
+.cta-button.secondary:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--verde);
+
+    background: var(--verde-suave);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #102016;
+
+    color: #cbd8ce;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 38px 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.footer h3 {
+    margin: 0 0 7px;
+
+    color: white;
+
+    font-size: 20px;
+}
+
+.footer p {
+    margin: 0;
+
+    color: #9eafa3;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+}
+
+.footer-links a {
+    color: #cbd8ce;
+
+    font-size: 13px;
+
+    transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #a5d6a7;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    padding: 17px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   ANIMACIÓN
+========================================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLETS
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .developers-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+    }
+
+    .values-container {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+    }
+
+    .developer-cta {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .developer-cta > div:first-child {
+        max-width: 700px;
+    }
+
+    .developer-cta p {
+        margin: auto;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   CELULARES
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-info {
+        min-height: 420px;
+
+        padding: 60px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 38px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .about-project {
+        padding-top: 65px;
+    }
+
+    .developers {
+        padding-bottom: 70px;
+    }
+
+    .developer-image {
+        height: 260px;
+    }
+
+    .developer-image img,
+    .profile-placeholder {
+        width: 160px;
+        height: 160px;
+    }
+
+    .profile-placeholder {
+        font-size: 40px;
+    }
+
+    .developer-content {
+        padding: 25px;
+    }
+
+    .developer-content h3 {
+        font-size: 21px;
+    }
+
+    .project-values {
+        padding: 65px 20px;
+    }
+
+    .developer-cta {
+        padding: 65px 20px;
+    }
+
+    .developer-cta h2 {
+        font-size: 29px;
+    }
+
+    .cta-buttons {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    .footer-content {
+        width: 90%;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .hero-info {
+        min-height: 400px;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-tag {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .section-title h2,
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .developer-image {
+        height: 235px;
+    }
+
+    .developer-image img,
+    .profile-placeholder {
+        width: 140px;
+        height: 140px;
+    }
+
+    .profile-placeholder {
+        font-size: 35px;
+    }
+
+    .developer-content {
+        padding: 22px;
+    }
+
+    .developer-content h3 {
+        font-size: 20px;
+    }
+
+    .skills {
+        gap: 6px;
+    }
+
+    .skills span {
+        font-size: 11px;
+    }
+
+    .portfolio-button {
+        width: 100%;
+    }
+
+    .developer-cta h2 {
+        font-size: 27px;
+    }
+}
+
