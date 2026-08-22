@@ -1,6 +1,6 @@
 /* =========================================================
-   BUSUCR - INFO
-   DISEÑO MINIMALISTA
+   BUSUCR - PÁGINA "NOSOTROS"
+   Hoja de estilos independiente (no depende de style.css)
 ========================================================= */
 
 
@@ -10,18 +10,318 @@
 
 :root {
 
-    --green: #2e7d32;
-    --green-dark: #1f5c26;
-    --green-light: #eaf4eb;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
 
+    --green: #16a34a;
+    --green-light: #dcfce7;
+
+    --yellow: #d97706;
+    --yellow-light: #fef3c7;
+
+    --red: #dc2626;
+    --red-light: #fee2e2;
+
+    --dark: #0f172a;
+    --dark-secondary: #1e293b;
+
+    --text: #334155;
+    --text-light: #64748b;
+
+    --background: #f8fafc;
     --white: #ffffff;
 
-    --background: #f7f8f7;
-    --text: #202522;
-    --text-light: #68716b;
+    --border: #e2e8f0;
 
-    --border: #e1e6e2;
+    --shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
 
+    --shadow-hover:
+        0 18px 40px rgba(15, 23, 42, 0.14);
+
+    --radius: 16px;
+
+    --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+    --font-body: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+
+/* =========================================================
+   RESET GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: var(--font-body);
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #eef4ff 100%
+        );
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+
+    font-family: var(--font-display);
+
+    letter-spacing: -0.02em;
+
+}
+
+
+/* =========================================================
+   UTILIDAD: ETIQUETA "EYEBROW"
+========================================================= */
+
+.eyebrow {
+
+    font-family: var(--font-mono);
+
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   ENCABEZADO DEL SITIO (logo + navegación)
+========================================================= */
+
+.site-header {
+
+    width: 100%;
+
+    padding: 14px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 4px 20px rgba(15, 23, 42, 0.05);
+
+}
+
+
+.site-header .logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+.site-header .logo-icon {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color: white;
+
+    font-family: var(--font-display);
+
+    font-weight: 700;
+
+    font-size: 17px;
+
+}
+
+
+.site-header .logo-text h1 {
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.01em;
+
+    color: var(--dark);
+
+}
+
+
+.site-header .nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+}
+
+
+.site-header .nav a {
+
+    padding: 9px 15px;
+
+    border-radius: 9px;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease;
+
+}
+
+
+.site-header .nav a:hover,
+.site-header .nav a:focus-visible {
+
+    color: var(--primary);
+
+    background-color: var(--primary-light);
+
+}
+
+
+/* =========================================================
+   FIRMA VISUAL: LÍNEA DE RUTA
+========================================================= */
+
+.route-divider {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 1000px;
+
+    height: 2px;
+
+    margin: 8px auto;
+
+    background-image:
+        linear-gradient(
+            to right,
+            var(--border) 55%,
+            transparent 0%
+        );
+
+    background-position: top;
+
+    background-size: 14px 2px;
+
+    background-repeat: repeat-x;
+
+}
+
+
+.route-divider::before,
+.route-divider::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    transform: translateY(-50%);
+
+    box-shadow: 0 0 0 4px var(--primary-light);
+
+}
+
+
+.route-divider::before {
+
+    left: -3px;
+
+}
+
+
+.route-divider::after {
+
+    right: -3px;
+
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD: FOCO VISIBLE
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+
+    outline: 2px solid var(--primary);
+
+    outline-offset: 2px;
 }
 
 
@@ -29,7 +329,6 @@
    RESET LOCAL
 ========================================================= */
 
-.info-intro,
 .page-header,
 .team-section,
 .about-section,
@@ -41,12 +340,12 @@
 
 
 /* =========================================================
-   HEADER DE LA PÁGINA
+   ENCABEZADO DE LA PÁGINA
 ========================================================= */
 
 .page-header {
 
-    background: #ffffff;
+    background: var(--white);
 
     border-bottom: 1px solid var(--border);
 
@@ -72,13 +371,9 @@
 
     margin-bottom: 12px;
 
-    color: var(--green);
+    color: var(--primary);
 
     font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
 
 }
 
@@ -87,7 +382,7 @@
 
     margin: 0 0 15px;
 
-    color: var(--text);
+    color: var(--dark);
 
     font-size: clamp(38px, 5vw, 58px);
 
@@ -121,7 +416,7 @@
 
     background: var(--background);
 
-    padding: 85px 20px 100px;
+    padding: 70px 20px 90px;
 
 }
 
@@ -143,13 +438,9 @@
 
     margin-bottom: 10px;
 
-    color: var(--green);
+    color: var(--primary);
 
     font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
 
 }
 
@@ -158,11 +449,11 @@
 
     margin: 0;
 
-    color: var(--text);
+    color: var(--dark);
 
     font-size: 32px;
 
-    font-weight: 650;
+    font-weight: 700;
 
 }
 
@@ -183,7 +474,7 @@
 
     flex-direction: column;
 
-    gap: 25px;
+    gap: 6px;
 
 }
 
@@ -204,9 +495,53 @@
 
     border: 1px solid var(--border);
 
-    border-radius: 10px;
+    border-radius: var(--radius);
 
     overflow: hidden;
+
+    position: relative;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.team-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            #60a5fa
+        );
+
+}
+
+
+.team-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow-hover);
+
+    border-color: #bfdbfe;
 
 }
 
@@ -225,7 +560,7 @@
 
     justify-content: center;
 
-    background: var(--green-light);
+    background: var(--primary-light);
 
 }
 
@@ -240,7 +575,9 @@
 
     object-fit: cover;
 
-    border-radius: 8px;
+    border-radius: 10px;
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
 
 }
 
@@ -251,7 +588,12 @@
 
 .person-photo-placeholder {
 
-    background: #edf3ee;
+    background:
+        linear-gradient(
+            160deg,
+            var(--primary-light),
+            #e0ecff
+        );
 
 }
 
@@ -268,15 +610,24 @@
 
     justify-content: center;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
-    background: var(--green);
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
 
     color: white;
+
+    font-family: var(--font-display);
 
     font-size: 45px;
 
     font-weight: 700;
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 
 }
 
@@ -302,13 +653,9 @@
 
     margin-bottom: 10px;
 
-    color: var(--green);
+    color: var(--primary);
 
     font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
 
 }
 
@@ -319,9 +666,11 @@
 
     margin: 0 0 17px;
 
-    color: var(--text);
+    color: var(--dark);
 
     font-size: 25px;
+
+    font-weight: 700;
 
     line-height: 1.2;
 
@@ -362,15 +711,17 @@
 
 .technology-list span {
 
-    padding: 6px 10px;
+    padding: 6px 11px;
 
-    background: #f4f6f4;
+    background: var(--primary-light);
 
-    border: 1px solid var(--border);
+    border: 1px solid #dbeafe;
 
-    border-radius: 4px;
+    border-radius: 999px;
 
-    color: #56605a;
+    color: var(--primary-dark);
+
+    font-family: var(--font-mono);
 
     font-size: 11px;
 
@@ -393,11 +744,16 @@
 
     gap: 9px;
 
-    padding: 10px 16px;
+    padding: 11px 18px;
 
-    background: var(--green);
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     color: white;
 
@@ -407,18 +763,23 @@
 
     font-weight: 700;
 
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.20);
+
     transition:
         background 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 
 }
 
 
 .person-button:hover {
 
-    background: var(--green-dark);
-
     transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(37, 99, 235, 0.28);
 
 }
 
@@ -434,18 +795,20 @@
 
 .person-button.unavailable {
 
-    background: #dce1dd;
+    background: #e2e8f0;
 
-    color: #727a74;
+    color: var(--text-light);
 
     cursor: default;
+
+    box-shadow: none;
 
 }
 
 
 .person-button.unavailable:hover {
 
-    background: #dce1dd;
+    background: #e2e8f0;
 
     transform: none;
 
@@ -488,13 +851,9 @@
 
 .about-title span {
 
-    color: var(--green);
+    color: var(--primary);
 
     font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
 
 }
 
@@ -503,9 +862,11 @@
 
     margin: 12px 0 0;
 
-    color: var(--text);
+    color: var(--dark);
 
     font-size: 31px;
+
+    font-weight: 700;
 
     line-height: 1.25;
 
@@ -527,6 +888,8 @@
 
 /* =========================================================
    CARACTERÍSTICAS
+   Los números funcionan como paradas de una ruta: cada
+   característica es una "parada" en el recorrido del proyecto.
 ========================================================= */
 
 .project-features {
@@ -566,15 +929,31 @@
 
 .feature-number {
 
-    display: block;
+    display: inline-flex;
 
-    margin-bottom: 15px;
+    align-items: center;
 
-    color: var(--green);
+    justify-content: center;
 
-    font-size: 11px;
+    width: 28px;
+
+    height: 28px;
+
+    margin-bottom: 14px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    color: var(--primary);
+
+    font-family: var(--font-mono);
+
+    font-size: 12px;
 
     font-weight: 700;
+
+    box-shadow: 0 0 0 3px var(--white), 0 0 0 4px var(--border);
 
 }
 
@@ -583,9 +962,11 @@
 
     margin: 0 0 8px;
 
-    color: var(--text);
+    color: var(--dark);
 
     font-size: 17px;
+
+    font-weight: 700;
 
 }
 
@@ -611,7 +992,12 @@
 
     padding: 75px 20px;
 
-    background: var(--green-dark);
+    background:
+        linear-gradient(
+            135deg,
+            var(--dark),
+            var(--dark-secondary)
+        );
 
 }
 
@@ -640,13 +1026,9 @@
 
     margin-bottom: 10px;
 
-    color: #a9d3ad;
+    color: #93c5fd;
 
     font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
 
 }
 
@@ -659,6 +1041,8 @@
 
     font-size: 31px;
 
+    font-weight: 700;
+
 }
 
 
@@ -668,7 +1052,7 @@
 
     margin: 0;
 
-    color: #d0dfd2;
+    color: #cbd5e1;
 
     font-size: 14px;
 
@@ -698,9 +1082,9 @@
 
     justify-content: center;
 
-    padding: 11px 17px;
+    padding: 12px 18px;
 
-    border-radius: 5px;
+    border-radius: 8px;
 
     font-size: 12px;
 
@@ -710,7 +1094,8 @@
 
     transition:
         background 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        transform 0.2s ease;
 
 }
 
@@ -719,7 +1104,7 @@
 
     background: white;
 
-    color: var(--green-dark);
+    color: var(--primary-dark);
 
 }
 
@@ -728,12 +1113,14 @@
 
     background: #e9f1ea;
 
+    transform: translateY(-2px);
+
 }
 
 
 .back-button {
 
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 
     color: white;
 
@@ -742,7 +1129,9 @@
 
 .back-button:hover {
 
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
+
+    transform: translateY(-2px);
 
 }
 
@@ -753,7 +1142,7 @@
 
 .footer {
 
-    background: #101a13;
+    background: var(--dark);
 
 }
 
@@ -787,6 +1176,8 @@
 
     font-size: 18px;
 
+    font-weight: 700;
+
 }
 
 
@@ -794,7 +1185,7 @@
 
     margin: 0;
 
-    color: #9daaa0;
+    color: #94a3b8;
 
     font-size: 12px;
 
@@ -812,7 +1203,7 @@
 
 .footer-links a {
 
-    color: #c5cec7;
+    color: #cbd5e1;
 
     font-size: 12px;
 
@@ -823,7 +1214,7 @@
 
 .footer-links a:hover {
 
-    color: #a9d3ad;
+    color: #93c5fd;
 
 }
 
@@ -832,11 +1223,13 @@
 
     padding: 15px 20px;
 
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 
-    color: #89958c;
+    color: #64748b;
 
     text-align: center;
+
+    font-family: var(--font-mono);
 
     font-size: 10px;
 
@@ -893,6 +1286,37 @@
 
 @media (max-width: 650px) {
 
+    .site-header {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 14px 5%;
+
+    }
+
+    .site-header .nav {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 4px;
+
+    }
+
+    .site-header .nav a {
+
+        padding: 8px 11px;
+
+        font-size: 13px;
+
+    }
+
+
     .page-header {
 
         padding: 55px 20px;
@@ -916,7 +1340,7 @@
 
     .team-section {
 
-        padding: 60px 20px 70px;
+        padding: 55px 20px 65px;
 
     }
 
@@ -1076,6 +1500,21 @@
 ========================================================= */
 
 @media (max-width: 400px) {
+
+    .site-header .logo-text h1 {
+
+        font-size: 17px;
+
+    }
+
+    .site-header .nav a {
+
+        padding: 7px 8px;
+
+        font-size: 12px;
+
+    }
+
 
     .page-header h2 {
 
